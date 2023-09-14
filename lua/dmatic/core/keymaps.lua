@@ -40,3 +40,10 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 
 -- markdown preview
 keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>") -- lunching a preview window in web browser
+
+-- obsidian
+keymap.set("n", "<leader>ot", ":ObsidianToday<CR>")
+keymap.set("n", "<leader>oy", ":ObsidianYesterday<CR>")
+keymap.set("n", "<leader>of", ":ObsidianQuickSwitch<CR>")
+keymap.set("n", "<leader>ofl", ":ObsidianFollowLink<CR>")
+keymap.set("n", "<leader>obl", ":ObsidianBacklinks<CR>")
