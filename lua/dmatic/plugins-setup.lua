@@ -71,14 +71,22 @@ return require("packer").startup(function(use)
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+	-- use({
+	-- 	"glepnir/lspsaga.nvim",
+	-- 	branch = "main",
+	-- 	requires = {
+	-- 		{ "nvim-tree/nvim-web-devicons" },
+	-- 		{ "nvim-treesitter/nvim-treesitter" },
+	-- 	},
+	-- }) -- enhanced lsp uis
 	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		requires = {
-			{ "nvim-tree/nvim-web-devicons" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-	}) -- enhanced lsp uis
+		"nvimdev/lspsaga.nvim",
+		after = "nvim-lspconfig",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+	})
+
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -111,6 +119,22 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({
+		"epwalsh/obsidian.nvim",
+		requires = {
+			-- Required.
+			"nvim-lua/plenary.nvim",
+
+			-- see below for full list of optional dependencies 👇
+		},
+		config = function()
+			require("obsidian").setup({
+				dir = "~/docs",
+
+				-- see below for full list of options 👇
+			})
+		end,
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
