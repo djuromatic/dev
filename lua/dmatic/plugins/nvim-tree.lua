@@ -1,6 +1,6 @@
 local setup, nvimtree = pcall(require, "nvim-tree")
 if not setup then
-  return
+	return
 end
 
 -- recommended settings from nvim-tree documetation
@@ -10,11 +10,16 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[highlight NvimTreeIndentMarker guifg=#3FC5FF]]) -- color of a arrow in explorer
 
 nvimtree.setup({
-  actions = {
-    open_file = {
-      window_picker = {
-        enable = false,
-      }
-    }
-  }
+	git = {
+		enable = true,
+		ignore = false,
+		show_root = true,
+	},
+	actions = {
+		open_file = {
+			window_picker = {
+				enable = false,
+			},
+		},
+	},
 })

@@ -40,8 +40,6 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 
 -- markdown preview
 keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>") -- lunching a preview window in web browser
-<<<<<<< Updated upstream
-=======
 
 -- obsidian
 keymap.set("n", "<leader>ot", ":ObsidianToday<CR>")
@@ -57,4 +55,3 @@ keymap.set("n", "<leader>gcp", ":GitConflictPreviousConflict<CR>") -- go to prev
 keymap.set("n", "<leader>gco", ":GitConflictChooseOurs<CR>") -- choose ours
 keymap.set("n", "<leader>gct", ":GitConflictChooseTheirs<CR>") -- choose theirs
 keymap.set("n", "<leader>gca", ":GitConflictChooseBoth<CR>") -- choose both
->>>>>>> Stashed changes
